@@ -11,6 +11,10 @@ var sentenceScrambler = function(sentence) {
       if(vowels.includes(wordArray[0])){
         wordArray[wordArray.length-1]=wordArray[wordArray.length-1]+"way";
       }
+      if(!vowels.includes(wordArray[0])){
+        wordArray[wordArray.length]=wordArray[0]+"ay";
+        wordArray[0]="";
+      }
       characterSplit[x]=(wordArray.join(""));
     }
     return characterSplit.join(" ");
