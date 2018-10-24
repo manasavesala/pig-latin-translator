@@ -12,8 +12,23 @@ var sentenceScrambler = function(sentence) {
         wordArray[wordArray.length-1]=wordArray[wordArray.length-1]+"way";
       }
       if(!vowels.includes(wordArray[0])){
-        wordArray[wordArray.length]=wordArray[0]+"ay";
-        wordArray[0]="";
+        if(!vowels.includes(wordArray[1])){
+          if(!vowels.includes(wordArray[2])){
+            wordArray[wordArray.length]=wordArray[0]+wordArray[1]+wordArray[2]+"ay";
+            wordArray[0]="";
+            wordArray[1]="";
+            wordArray[2]="";
+          }
+          else{
+            wordArray[wordArray.length]=wordArray[0]+wordArray[1]+"ay";
+            wordArray[0]="";
+            wordArray[1]="";
+          }
+        }
+        else{
+          wordArray[wordArray.length]=wordArray[0]+"ay";
+          wordArray[0]="";
+        }
       }
       characterSplit[x]=(wordArray.join(""));
     }
