@@ -20,6 +20,12 @@ var sentenceScrambler = function(sentence) {
             wordArray[1]="";
             wordArray[2]="";
           }
+          else if ((wordArray[1]===("q"||"Q"))&&(wordArray[2]===("u"||"U"))){
+              wordArray[wordArray.length]=wordArray[0]+wordArray[1]+wordArray[2]+"ay";
+              wordArray[0]="";
+              wordArray[1]="";
+              wordArray[2]="";
+            }
           else{
             wordArray[wordArray.length]=wordArray[0]+wordArray[1]+"ay";
             wordArray[0]="";
