@@ -6,8 +6,15 @@ var sentenceScrambler = function(sentence) {
     if (vowels.includes(characterSplit[x])) {
       characterSplit[x] = characterSplit[x] + "ay ";
       }
+    else if (characterSplit[x].length>1){
+      var wordArray = characterSplit[x].split("");
+      if(vowels.includes(wordArray[0])){
+        wordArray[wordArray.length-1]=wordArray[wordArray.length-1]+"way";
+      }
+      characterSplit[x]=(wordArray.join(""));
     }
     return characterSplit.join(" ");
+  }
 }
 
 $(document).ready(function() {
