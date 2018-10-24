@@ -47,8 +47,8 @@ var sentenceScrambler = function(sentence) {
       }
       characterSplit[x]=(wordArray.join(""));
     }
-    return characterSplit.join(" ");
   }
+  return characterSplit.join(" ");
 }
 
 $(document).ready(function() {
