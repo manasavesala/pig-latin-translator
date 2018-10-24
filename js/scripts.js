@@ -11,6 +11,7 @@ var sentenceScrambler = function(sentence) {
       if(vowels.includes(wordArray[0])){
         wordArray[wordArray.length-1]=wordArray[wordArray.length-1]+"way";
       }
+      // could these nested ifs below become one for loop?
       if(!vowels.includes(wordArray[0])){
         if(!vowels.includes(wordArray[1])){
           if(!vowels.includes(wordArray[2])){
@@ -26,8 +27,16 @@ var sentenceScrambler = function(sentence) {
           }
         }
         else{
-          wordArray[wordArray.length]=wordArray[0]+"ay";
-          wordArray[0]="";
+          if((wordArray[0]===("q"||"Q"))&&(wordArray[1]===("u"||"U"))){
+            wordArray[wordArray.length]=wordArray[0]+wordArray[1]+"ay";
+            wordArray[0]="";
+            wordArray[1]="";
+          }
+          else{
+            wordArray[wordArray.length]=wordArray[0]+"ay";
+            wordArray[0]="";
+          }
+
         }
       }
       characterSplit[x]=(wordArray.join(""));
